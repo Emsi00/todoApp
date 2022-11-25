@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="newExercises">
+        <div class="inputDiv">
+          <input
+            type="text"
+            class="newExerciseName"
+            placeholder="Enter exercise's name"
+            id="exerciseName"
+          />
+        </div>
+        <div class="exerciseText">
+          <textarea
+            name=""
+            id="exerciseDescription"
+            cols="40"
+            rows="10"
+            placeholder="Enter exercise's description"
+            style="
+              resize: none;
+              border-radius: 5px;
+              font-size: 20px;
+              font: italic small-caps bold 16px/2 cursive;
+              min-height: 60px;
+              height: 70px;
+              max-height: 200px;
+            "
+          ></textarea>
+        </div>
+        <div class="addBtnDiv">
+          <button id="addBtn">Add exercises</button>
+        </div>
+      </div>
+    </div>
+    <div class="centrowanie">
+      <div class="ActiveExercise">
+        <div class="centrowanie">
+          <label>Active Exercises</label>
+        </div>
+        <div class="activeTodo">
+          <ul class="activeList">
+            <li class="titleLi"></li>
+            <li class="descriptionLi"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="FinishedExercise">
+        <div class="centrowanie">
+          <label>Finished Exercises</label>
+        </div>
+        <div class="finishedTodo">
+          <ul class="activeList">
+            <li class="titleLi"></li>
+            <li class="descriptionLi"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
