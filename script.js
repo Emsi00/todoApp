@@ -15,6 +15,7 @@ function createNewExercise() {
     activeExercisesArray.push({
       title: exerciseName.value,
       description: exerciseDescription.value,
+      status: "active",
     });
     resetInputValue();
     renderList();
@@ -31,7 +32,6 @@ function renderList() {
     const newEl = document.importNode(szablonExercise, true);
     newEl.querySelector(".titleLi").textContent = el.title;
     newEl.querySelector(".descriptionLi").textContent = el.description;
-    // console.log(el.name + " " + el.description);
     const finishBtn = document.createElement("button");
     finishBtn.textContent = "Finish";
     finishBtn.classList.add("finishBtn");
@@ -39,6 +39,7 @@ function renderList() {
     activeList.appendChild(newEl);
     finishBtn.addEventListener("click", () => {
       activeList.removeChild(newEl);
+      el.status = "noactive";
       finishedExercisesArray.push(el);
       activeExercisesArray.shift(el);
       renderList();
@@ -49,7 +50,18 @@ function renderList() {
     const newEl = document.importNode(szablonExercise, true);
     newEl.querySelector(".titleLi").textContent = el.title;
     newEl.querySelector(".descriptionLi").textContent = el.description;
+    const returnBtn = document.createElement("button");
+    returnBtn.textContent = "Return to active";
+    returnBtn.classList.add("moveBtn");
+    newEl.appendChild(returnBtn);
     finishedList.appendChild(newEl);
+    returnBtn.addEventListener("click", () => {
+      finishedList.removeChild(newEl);
+      el.status = "active";
+      activeExercisesArray.push(el);
+      finishedExercisesArray.shift(el);
+      renderList();
+    });
   });
 }
 addNewExercise.addEventListener("click", createNewExercise);

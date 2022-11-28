@@ -99,3 +99,9 @@ p {
   border-radius: 5px;
   background-color: green;
 }
+.moveBtn {
+  padding: 5px;
+  font: italic small-caps bold 25px/2 cursive;
+  border-radius: 5px;
+  background-color: gray;
+}
